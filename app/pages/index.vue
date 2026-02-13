@@ -29,7 +29,7 @@
           Valentines Day
         </p>
         <h1 class="text-5xl font-bold tracking-tight text-rose-700 sm:text-6xl">
-          Will you be my Valentine, Bebi?
+          Will you be my Valentine?
         </h1>
         <p class="text-lg text-rose-700/80 sm:text-xl">
           I love you with all my heart and I want to thank you for being the light of my life.

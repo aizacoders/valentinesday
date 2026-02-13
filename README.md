@@ -31,3 +31,15 @@ Open `http://localhost:3000`.
 pnpm build
 pnpm preview
 ```
+
+## Deploy to GitHub Pages (Project Pages)
+
+1. In GitHub, go to Settings → Pages and set Source to GitHub Actions.
+2. Make sure the workflow runs on your default branch (e.g., `main`).
+3. The site will be available at `https://<user>.github.io/<repo>/`.
+
+If you want to preview the build locally with a project base URL:
+
+```bash
+NUXT_APP_BASE_URL=/<repo>/ pnpm build
+```
