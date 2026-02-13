@@ -1,0 +1,447 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap";
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Montserrat', sans-serif;
+
+  --color-green-50: #EFFDF5;
+  --color-green-100: #D9FBE8;
+  --color-green-200: #B3F5D1;
+  --color-green-300: #75EDAE;
+  --color-green-400: #00DC82;
+  --color-green-500: #00C16A;
+  --color-green-600: #00A155;
+  --color-green-700: #007F45;
+  --color-green-800: #016538;
+  --color-green-900: #0A5331;
+  --color-green-950: #052E16;
+}
+
+body {
+  background: #fff5f7;
+}
+
+.page-romance {
+  background: #fff5f7;
+  min-height: 100vh;
+}
+
+.page-romance :where(.u-page-section) {
+  background: transparent;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #f43f5e;
+}
+
+.romance-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #ffe4ea;
+  box-shadow: none;
+}
+
+.romance-panel {
+  border-radius: 16px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ffe4ea;
+  box-shadow: none;
+}
+
+.romance-banner {
+  border-radius: 20px;
+  padding: 28px;
+  background: #fff1f5;
+  border: 1px solid #ffd1dc;
+  box-shadow: none;
+}
+
+.romance-glow {
+  display: none;
+}
+
+.countdown-card {
+  margin-top: 20px;
+  border-radius: 16px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #ffd1dc;
+  box-shadow: none;
+}
+
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  min-height: 140px;
+  background: #fff0f4;
+  border: 1px solid #ffd1dc;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.photo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  padding: 12px;
+  color: #9f1239;
+}
+
+.quote-card {
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #fff7f9;
+  border: 1px solid #ffe4ea;
+}
+
+.romance-chip {
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #ffe4ea;
+  border: 1px solid #ffd1dc;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9f1239;
+}
+
+.smooth-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.floating-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fb7185;
+  transform: rotate(45deg);
+  opacity: 0.4;
+  animation: floatUp 12s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -5px;
+  left: 0;
+}
+
+.heart::after {
+  left: -5px;
+  top: 0;
+}
+
+.heart-1 {
+  left: 8%;
+  top: 90%;
+  animation-delay: 0s;
+}
+
+.heart-2 {
+  left: 22%;
+  top: 95%;
+  width: 12px;
+  height: 12px;
+  opacity: 0.5;
+  animation-delay: 2s;
+}
+
+.heart-3 {
+  left: 45%;
+  top: 92%;
+  animation-delay: 4s;
+}
+
+.heart-4 {
+  left: 65%;
+  top: 96%;
+  width: 10px;
+  height: 10px;
+  opacity: 0.35;
+  animation-delay: 1s;
+}
+
+.heart-5 {
+  left: 82%;
+  top: 94%;
+  width: 14px;
+  height: 14px;
+  opacity: 0.45;
+  animation-delay: 3s;
+}
+
+.love-button {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+
+.love-button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.love-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.love-logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  isolation: isolate;
+}
+
+.love-logo::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(199, 0, 54, 0.35), rgba(199, 0, 54, 0));
+  filter: blur(12px);
+  z-index: -1;
+}
+
+.love-icon {
+  width: 200px;
+  height: 200px;
+  color: #C70036;
+  transform: none;
+  transform-origin: center;
+  animation: heartbeat 2.2s ease-in-out infinite;
+}
+
+.love-button:hover .love-icon {
+  transform: scale(1.08);
+  filter: drop-shadow(0 10px 20px rgba(251, 113, 133, 0.35));
+}
+
+.love-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #9f1239;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.choice-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.choice-button {
+  border-radius: 999px;
+  padding: 14px 32px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.choice-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.02);
+}
+
+.choice-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.choice-yes {
+  background: #fb7185;
+  color: #ffffff;
+  border: none;
+}
+
+.choice-yes:hover {
+  box-shadow: 0 12px 24px rgba(251, 113, 133, 0.35);
+}
+
+.choice-no {
+  border-color: #fb7185;
+  color: #9f1239;
+  background: #fff0f4;
+}
+
+.choice-no:hover {
+  box-shadow: 0 12px 24px rgba(251, 113, 133, 0.18);
+}
+
+.valentine-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.valentine-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.valentine-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 0;
+  border: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.valentine-content {
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 24px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.valentine-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  border-radius: 999px;
+  padding: 8px 14px;
+  border: 1px solid #ffd1dc;
+  background: #fff7f9;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9f1239;
+}
+
+@media (max-width: 640px) {
+  .love-button {
+    width: 190px;
+    height: 190px;
+  }
+
+  .love-icon {
+    width: 148px;
+    height: 148px;
+  }
+
+  .love-logo::before {
+    width: 180px;
+    height: 180px;
+  }
+
+  .love-heart::before,
+  .love-heart::after {
+    width: 96px;
+    height: 96px;
+  }
+
+  .love-heart::before {
+    top: -48px;
+  }
+
+  .love-heart::after {
+    left: -48px;
+  }
+
+  .valentine-content {
+    max-height: calc(100vh - 120px);
+  }
+}
+
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smooth-float,
+  .heart,
+  .love-heart {
+    animation: none;
+  }
+
+  .love-button,
+  .choice-button {
+    transition: none;
+  }
+}
