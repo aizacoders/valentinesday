@@ -245,15 +245,18 @@
 </template>
 
 <script setup lang="ts">
+import { withBase } from 'ufo'
+
 const accepted = ref(false)
 const isPlaying = ref(false)
 const audioRef = ref<HTMLAudioElement | null>(null)
+const baseURL = useRuntimeConfig().app.baseURL
 const photoGallery = [
-  '/images/IMG_0152.jpg',
-  '/images/IMG_0237-2.jpg',
-  '/images/img1.jpg',
-  '/images/img2.jpg'
-]
+  'images/IMG_0152.jpg',
+  'images/IMG_0237-2.jpg',
+  'images/img1.jpg',
+  'images/img2.jpg'
+].map(path => withBase(path, baseURL))
 
 const handleYes = async () => {
   accepted.value = true
