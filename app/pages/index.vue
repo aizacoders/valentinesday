@@ -193,6 +193,36 @@
                 </div>
               </div>
             </UPageSection>
+
+            <UPageSection id="long-distance">
+              <div class="romance-banner space-y-4 text-center">
+                <p class="eyebrow">
+                  Long Distance Love
+                </p>
+                <h3 class="text-3xl font-semibold text-rose-700">
+                  Miles apart, hearts connected.
+                </h3>
+                <p class="text-sm text-muted">
+                  Our love stretches from Jakarta, Indonesia to Adelaide, Australia.
+                  Even across oceans and time zones, you are always in my heart.
+                </p>
+                <p class="text-sm font-semibold text-rose-600">
+                  Maps: Jakarta, Indonesia → Adelaide, Australia
+                </p>
+                <p class="text-sm text-muted">
+                  Total distance: ~4,556 km (great-circle)
+                </p>
+                <div class="mt-4 aspect-video overflow-hidden rounded-2xl border border-rose-200 bg-white">
+                  <iframe
+                    title="Map from Jakarta, Indonesia to Adelaide, Australia"
+                    class="h-full w-full"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d13132864.529996676!2d113.22878243645174!3d-19.7182453975048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x2e69f3f3b7c0a3d1%3A0x6e274a5b9d8d7f83!2sJakarta%2C%20Indonesia!3m2!1d-6.2087634!2d106.845599!4m5!1s0x6ab0ce4bbf2d4b7f%3A0x3ce1fca9e1df5a0!2sAdelaide%20SA%205000%2C%20Australia!3m2!1d-34.9284989!2d138.6007456!5e0!3m2!1sen!2sid!4v1739412600000"
+                  />
+                </div>
+              </div>
+            </UPageSection>
           </div>
         </div>
       </div>
