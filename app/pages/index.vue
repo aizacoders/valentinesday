@@ -123,15 +123,9 @@
             <UPageSection id="photos">
               <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                 <div class="space-y-4">
-                  <p class="eyebrow">
-                    Our Story
-                  </p>
                   <h3 class="text-3xl font-semibold text-rose-700">
-                    A gallery of moments that feel light and bright.
+                    Our Story
                   </h3>
-                  <p class="text-sm text-muted">
-                    Choose two to four photos that capture the calm, joyful side of your story.
-                  </p>
                 </div>
                 <div class="grid gap-4 sm:grid-cols-2">
                   <div
@@ -236,7 +230,7 @@
       @pause="isPlaying = false"
     >
       <source
-        src="/audio/music.mp3"
+        :src="audioSource"
         type="audio/mpeg"
       >
       Your browser does not support the audio element.
@@ -250,13 +244,15 @@ import { withBase } from 'ufo'
 const accepted = ref(false)
 const isPlaying = ref(false)
 const audioRef = ref<HTMLAudioElement | null>(null)
-const baseURL = useRuntimeConfig().app.baseURL
+const baseURL = useRuntimeConfig().app.baseURL || '/'
+const toAsset = (path: string) => withBase(path, baseURL)
 const photoGallery = [
-  'images/IMG_0152.jpg',
-  'images/IMG_0237-2.jpg',
-  'images/img1.jpg',
-  'images/img2.jpg'
-].map(path => withBase(path, baseURL))
+  '/images/IMG_0152.jpg',
+  '/images/IMG_0237-2.jpg',
+  '/images/img1.jpg',
+  '/images/img2.jpg'
+].map(path => toAsset(path))
+const audioSource = toAsset('/audio/music.mp3')
 
 const handleYes = async () => {
   accepted.value = true
